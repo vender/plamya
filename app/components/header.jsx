@@ -2,13 +2,14 @@
 import { useState } from 'react'
 import { motion } from "framer-motion"
 import { Dialog } from '@headlessui/react'
+import Link from 'next/link'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Главная', href: '#' },
-    { name: 'Услуги', href: '#' },
-    { name: 'Проекты', href: '#' },
-    { name: 'Контакты', href: '#' },
+    { name: 'О нас', href: '/about' },
+    { name: 'Услуги', href: '/services' },
+    { name: 'Проекты', href: '/projects' },
+    { name: 'Контакты', href: '/contacts' },
 ]
 
 export default function Header() {
@@ -20,8 +21,8 @@ export default function Header() {
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: "0" }}
             transition={{
-                duration: 2,
-                delay: 5,
+                duration: 1,
+                delay: 3,
                 ease: [0, 0.71, 0.2, 1.01]
             }}
         >
@@ -36,11 +37,11 @@ export default function Header() {
                         <Bars3Icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </button>
                 </div>
-                <div className="hidden lg:flex lg:gap-x-12">
+                <div className="hidden lg:flex lg:gap-x-12 ">
                     {navigation.map((item) => (
-                        <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
+                        <Link key={item.name} href={item.href} className="text-base font-sans font-semibold leading-6 text-white">
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </nav>
@@ -61,13 +62,13 @@ export default function Header() {
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
                                 {navigation.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.name}
                                         href={item.href}
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

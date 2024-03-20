@@ -17,26 +17,14 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+  background-color: black;
 }
 
-main {
+/* main {
   background: url("/images/BG.jpg") no-repeat;
   background-size: cover;
   background-position: center bottom;
-}
-
-
-
-
-
-
+} */
 
 
 @layer utilities {
